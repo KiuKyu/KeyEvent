@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="doReady()">
+<img src="Zawarudo.gif" id="dio" style="position: absolute;left: 0;top: 0;">
+</body>
+<script>
+    let element = document.getElementById('dio');
+
+    function upArrowPressed() {
+        element.style.top = parseInt(element.style.top) - 50 + 'px';
+    }
+
+    function downArrowPressed() {
+        element.style.top = parseInt(element.style.top) + 50 + 'px';
+    }
+
+    function leftArrowPressed() {
+        element.style.left = parseInt(element.style.left) - 50 + 'px';
+    }
+
+    function rightArrowPressed() {
+        element.style.left = parseInt(element.style.left) + 50 + 'px';
+    }
+
+    function tapKey(evt) {
+        switch (evt.keyCode) {
+            case 37 :
+                leftArrowPressed();
+                break;
+            case 38 :
+                upArrowPressed();
+                break;
+            case 39 :
+                rightArrowPressed();
+                break;
+            case 40 :
+                downArrowPressed();
+                break;
+        }
+    }
+
+    function doReady(){
+        window.addEventListener('keydown', tapKey);
+    }
+</script>
+</html>
